@@ -1,5 +1,6 @@
 import asyncio
 from aiogram import Bot, Dispatcher
+from aiogram.client.session.aiohttp import AiohttpSession
 from aiogram.enums import ParseMode
 from aiogram.client.default import DefaultBotProperties
 from data.config import TOKEN
@@ -14,6 +15,7 @@ async def main():
     bot = Bot(
         token=TOKEN,
         default=DefaultBotProperties(parse_mode=ParseMode.HTML),
+        session=AiohttpSession()
     )
     dp.include_router(start_router)
     dp.include_router(help_router)
