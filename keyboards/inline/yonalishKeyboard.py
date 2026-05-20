@@ -8,3 +8,4 @@ yonalish = InlineKeyboardMarkup(
         ]
     ]
 )
+a = 1
